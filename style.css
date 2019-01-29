@@ -17,6 +17,7 @@ ul,ol{
   }
   body{
     margin:0;
+    overflow: hidden;
     
   }
   html{
