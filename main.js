@@ -16,6 +16,20 @@ eraser.onclick =function(){
     eraser.classList.add('active')
     pen.classList.remove('active')
 }
+clear.onclick =function(){
+    context.clearRect(0, 0, yyy.width, yyy.height);
+}
+
+save.onclick =function(){
+    var url=yyy.toDataURL("imge/png")
+    console.log(url)
+    var a =document.createElement('a')
+    document.body.appendChild(a)
+    a.href =url
+    a.download ="我的画"
+    a.target='_blank'
+    a.click()
+}
 red.onclick =function(){
     context.strokeStyle ='red'
     red.classList.add('active')
@@ -37,6 +51,13 @@ blue.onclick =function(){
     green.classList.remove('active')
 }
 
+thin.onclick =function(){
+    lineWidth = 5
+}
+
+thick.onclick =function(){
+    lineWidth = 10
+}
 //eraser.onclick = function () {
  //   eraserEnabled = true
  //   actions.className = "actions x"
@@ -78,7 +99,7 @@ function drawLine(x1, y1, x2, y2) {
     context.fillStyle = "black"
     context.moveTo(x1, y1)  //  起点
     context.lineTo(x2, y2)// 终点
-    context.lineWidth = 5
+    context.lineWidth = lineWidth
     context.stroke()
     context.closePath()
 }
