@@ -6,17 +6,48 @@ autoSetCanvasSize(yyy)//自动设置canvas的宽高
 listenToUser(yyy)//鼠标监听
 
 var eraserEnabled = false
-eraser.onclick = function () {
-    eraserEnabled = true
-    actions.className = "actions x"
-
-}    // 橡皮擦是否使用
-brush.onclick = function () {
-    eraserEnabled = false
-    actions.className = "actions"
-
+pen.onclick =function(){
+    eraserEnabled =false
+    pen.classList.add('active')
+    eraser.classList.remove('active')
+}
+eraser.onclick =function(){
+    eraserEnabled =true
+    eraser.classList.add('active')
+    pen.classList.remove('active')
+}
+red.onclick =function(){
+    context.strokeStyle ='red'
+    red.classList.add('active')
+    green.classList.remove('active')
+    blue.classList.move('active')
 
 }
+green.onclick =function(){
+    context.strokeStyle ='greenyellow'
+    green.classList.add('active')
+    red.classList.remove('active')
+    blue.classList.remove('active')
+    
+}
+blue.onclick =function(){
+    context.strokeStyle ='blue'
+    blue.classList.add('active')
+    red.classList.remove('active')
+    green.classList.remove('active')
+}
+
+//eraser.onclick = function () {
+ //   eraserEnabled = true
+ //   actions.className = "actions x"
+
+//}    // 橡皮擦是否使用
+//brush.onclick = function () {
+ //   eraserEnabled = false
+ //   actions.className = "actions"
+
+
+//}
 /*************/
 function autoSetCanvasSize(canvas) {
     setCanvasSize()
